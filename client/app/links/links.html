@@ -1,4 +1,4 @@
-<div id='container'>
+<div id='container' ng-controller='LinksController'>
   <!-- Your html here -->
   <input ng-model='filterText'>
   <div class='link' ng-repeat="url in data.links | orderBy:'-visits' | filter:filterText track by $index">
