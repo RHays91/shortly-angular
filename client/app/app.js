@@ -24,9 +24,6 @@ angular.module('shortly', [
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
     })
-    // .when('/:code', {
-    //   redirectTo: '/api/links/' + code
-    // })
     .otherwise({
       redirectTo: '/links'
     });

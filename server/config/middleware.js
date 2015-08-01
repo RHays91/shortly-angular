@@ -19,7 +19,9 @@ module.exports = function (app, express) {
   // authentication middleware used to decode token and made available on the request
   //app.use('/api/links', helpers.decode);
   app.use('/api/links', linkRouter); // user link router for link request
-  app.use('/:codes', linkRouter);
+  app.get(/([a-z0-9A-Z]){5}/, function(req, res){
+    res.redirect('/api/links' + req.path);
+  });
   app.use(helpers.errorLogger);
   app.use(helpers.errorHandler);
 
